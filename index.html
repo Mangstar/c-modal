@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  1234
+  <button class="btn">Show Modal</button>
+  <script src="index.js"></script>
+  <script>
+    const modal = new CModal({
+      // showAnim: 'show-slide-up',
+      // hideAnim: 'show-slide-down',
+      beforeOpen: function () {
+        return true;
+      }
+    });
+
+    modal
+      .create()
+      .setHeader('<h1>Модальное окно</h1>')
+      .setContent('<div>Контект окна</div>')
+      .setFooter('<div>Футер</div>');
+
+    document.querySelector('.btn').addEventListener('click', function() {
+      modal.open();
+    });
+  </script>
+</body>
+</html>
